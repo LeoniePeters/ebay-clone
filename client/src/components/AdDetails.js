@@ -17,7 +17,7 @@ class AdDetails extends React.Component {
             <div>
             <h1>Title: {this.props.ad.title}</h1>
             <h2>Price: €{this.props.ad.price}</h2>
-            <img src={this.props.ad.imageUrl} />
+            <img src={this.props.ad.imageUrl} alt="productimage"/>
             <p>Description: {this.props.ad.description}</p>
             <p>Email address: {this.props.ad.email}</p>
             <p>Phone number: {this.props.ad.phoneNumber}</p>

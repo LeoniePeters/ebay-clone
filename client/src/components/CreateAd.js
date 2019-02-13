@@ -32,7 +32,6 @@ class CreateAd extends React.Component {
   }
 
   render() {
-      console.log(this.onSubmit)
     return(
         <form onSubmit={this.onSubmit}>
             <label>Title:
