@@ -13,7 +13,6 @@ export default(state = null, action = {}) => {
                 action.ad
             ]
         }
-
         
         default:
         return state

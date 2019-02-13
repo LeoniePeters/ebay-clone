@@ -1,4 +1,4 @@
-import { JsonController, Get, Post, Body, HttpCode} from 'routing-controllers'
+import { JsonController, Get, Post, Param, Body, HttpCode} from 'routing-controllers'
 import Ad from './entity'
 
 @JsonController()
@@ -8,6 +8,13 @@ export default class MainController {
   async allAds() {
     const advertisements = await Ad.find()
     return { advertisements }
+  }
+
+  @Get('/ad/:id')
+  getAd(
+    @Param('id') id: number
+    ) {
+    return Ad.findOne(id)
   }
 
   @Post('/sellerpage')

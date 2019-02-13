@@ -19,6 +19,22 @@ export const loadAds = () => (dispatch, getState) => {
     .catch(console.error)
 }
 
+export const AD_FETCHED = 'AD_FETCHED'
+
+const adFetched = ad => ({
+  type: AD_FETCHED,
+  ad
+})
+
+export const loadAd = (id) => (dispatch, getState) => {
+  if (getState().ad) return
+  request(`${baseUrl}/ad/${id}`)
+    .then(response => {
+      dispatch(adFetched(response.body))
+    })
+    .catch(console.error)
+}
+
 export const AD_CREATE_SUCCESS = 'AD_CREATE_SUCCESS'
 
 const adCreateSuccess = ad => ({
